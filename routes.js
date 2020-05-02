@@ -22,6 +22,11 @@ import Register from './src/screens/Register';
 import Registerv2 from './src/screens/Registerv2';
 import Grid from './src/screens/Grid';
 
+
+import LoginLogin from "./src/screens/LoginLogin";
+import HomeHome from "./src/screens/HomeHome";
+import ContactMess from "./src/screens/ContactMess";
+
 import theme from './src/theme';
 import { Block, Icon, Text } from 'galio-framework';
 
@@ -30,8 +35,8 @@ const GalioDrawer = props => (
     <Block space="between" row style={styles.header}>
       <Block flex={0.3}><Image source={{ uri: 'http://i.pravatar.cc/100' }} style={styles.avatar} /></Block>
       <Block flex style={styles.middle}>
-        <Text size={theme.SIZES.FONT * 0.875}>Galio Framework</Text>
-        <Text muted size={theme.SIZES.FONT * 0.875}>React Native</Text>
+        <Text size={theme.SIZES.FONT * 0.875}>Tasol</Text>
+        <Text muted size={theme.SIZES.FONT * 0.875}>poovarasu</Text>
       </Block>
     </Block>
     <ScrollView>
@@ -84,6 +89,27 @@ MenuIcon.propTypes = {
 };
 
 const screens = {
+  ContactMess: {
+    screen: ContactMess,
+    navigationOptions: {
+      drawerLabel: 'Contact Mess',
+      drawerIcon: props => <MenuIcon name="flag" family="font-awesome" focused={props.focused} />,
+    },
+  },
+  HomeHome: {
+    screen: HomeHome,
+    navigationOptions: {
+      drawerLabel: 'Home Screen',
+      drawerIcon: props => <MenuIcon name="flag" family="font-awesome" focused={props.focused} />,
+    },
+  },
+  LoginLogin: {
+    screen: LoginLogin,
+    navigationOptions: {
+      drawerLabel: 'Log Screen',
+      drawerIcon: props => <MenuIcon name="flag" family="font-awesome" focused={props.focused} />,
+    },
+  },
   Home: {
     screen: Components,
     navigationOptions: {
@@ -112,7 +138,7 @@ const screens = {
       drawerIcon: props => <MenuIcon name="flag" family="font-awesome" focused={props.focused} />,
     },
   },
-  /*
+
   Dashboard: {
     screen: Dashboard,
     navigationOptions: {
@@ -120,7 +146,7 @@ const screens = {
       drawerIcon: props => <MenuIcon name="flag" family="font-awesome" focused={props.focused} />,
     },
   },
-  */
+
   News: {
     screen: News,
     navigationOptions: {
@@ -132,14 +158,6 @@ const screens = {
     screen: OrderConfirmed,
     navigationOptions: {
       drawerLabel: 'Order Confirmed',
-      drawerIcon: props => <MenuIcon name="flag" family="font-awesome" focused={props.focused} />,
-    },
-  },
-  /*
-  Presentation: {
-    screen: Presentation,
-    navigationOptions: {
-      drawerLabel: 'Presentation Screen',
       drawerIcon: props => <MenuIcon name="flag" family="font-awesome" focused={props.focused} />,
     },
   },
@@ -170,8 +188,7 @@ const screens = {
       drawerLabel: 'Grid Screen',
       drawerIcon: props => <MenuIcon name="flag" family="font-awesome" focused={props.focused} />,
     },
-  },
-  */
+  }
 };
 
 const options = {
@@ -198,6 +215,6 @@ const options = {
   },
 };
 
-const GalioApp = createDrawerNavigator(screens, options);
+const TasolApp = createDrawerNavigator(screens, options);
 
-export default GalioApp;
+export default TasolApp;
