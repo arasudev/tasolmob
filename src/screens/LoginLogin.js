@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {AsyncStorage} from 'react-native';
 import { StyleSheet, View, TextInput, Alert, TouchableOpacity } from 'react-native';
 import { Text } from 'galio-framework';
 import Spinner from 'react-native-loading-spinner-overlay';
@@ -12,6 +13,10 @@ export default class LoginView extends Component {
             password: '',
             spinner: false,
         }
+    }
+
+    set = (key, value) => {
+        AsyncStorage.setItem(key, value);
     }
 
     onClickListener = () => {
@@ -28,6 +33,16 @@ export default class LoginView extends Component {
                 spinner: true,
             });
         }
+
+        // var store = this.set("mykey", "myValue");
+        // if (store) {
+        //     alert("stored successfully");
+        // } else {
+        //     alert("unable to store the value");
+        // }
+
+
+
     }
 
     render() {
